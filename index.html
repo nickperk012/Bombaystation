@@ -240,6 +240,25 @@ html,body{height:100%;background:var(--green-deep);color:var(--cream);font-famil
 .social a:hover{color:var(--gold);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @keyframes scaleIn{from{opacity:0;transform:scale(0.72) rotate(-8deg);}to{opacity:1;transform:scale(1) rotate(0deg);}}
+/* ── PALM SWAY ── */
+@keyframes palmSway{0%,100%{transform:rotate(0deg);}40%{transform:rotate(2.5deg);}75%{transform:rotate(-1.5deg);}}
+@keyframes palmSwayR{0%,100%{transform:rotate(0deg);}40%{transform:rotate(-2.5deg);}75%{transform:rotate(1.5deg);}}
+.pl1 svg,.pl2 svg,.pl3 svg,.pr1 svg,.pr2 svg,.pr3 svg{transform-origin:50% 100%;will-change:transform;}
+.pl1 svg{animation:palmSway 9s ease-in-out infinite;}
+.pl2 svg{animation:palmSway 11s ease-in-out infinite 2.2s;}
+.pl3 svg{animation:palmSway 7.5s ease-in-out infinite 0.8s;}
+.pr1 svg{animation:palmSwayR 10s ease-in-out infinite 1.4s;}
+.pr2 svg{animation:palmSwayR 8.5s ease-in-out infinite 3.1s;}
+.pr3 svg{animation:palmSwayR 12s ease-in-out infinite 0.4s;}
+/* ── FIREFLIES ── */
+.firefly{position:absolute;width:3px;height:3px;border-radius:50%;background:rgba(255,220,60,0.95);box-shadow:0 0 6px 3px rgba(255,190,40,0.5),0 0 14px 7px rgba(240,150,10,0.25);pointer-events:none;z-index:2;}
+@keyframes fireflyFloat{0%{opacity:0;transform:translate(0,0);}20%{opacity:1;}60%{opacity:0.6;transform:translate(var(--fx),var(--fy));}100%{opacity:0;transform:translate(var(--fx2),var(--fy2));}}
+/* ── STARS ── */
+.star{position:absolute;border-radius:50%;background:#fff9ee;pointer-events:none;}
+@keyframes starTwinkle{0%,100%{opacity:0.2;transform:scale(1);}50%{opacity:1;transform:scale(1.6);}}
+/* ── SKY BREATHE ── */
+@keyframes skyBreathe{0%,100%{opacity:1;}50%{opacity:0.82;}}
+.sky{animation:skyBreathe 18s ease-in-out infinite;}
 </style>
 </head>
 <body>
@@ -250,160 +269,147 @@ html,body{height:100%;background:var(--green-deep);color:var(--cream);font-famil
   <div class="sun-refl"></div>
 
   <!-- 4 tiny background palms at horizon -->
-  <div class="palm pbg1"><svg viewBox="0 0 65 195" fill="none"><path d="M33 195 L32 76" stroke="#0e1e0c" stroke-width="5" stroke-linecap="round"/><path d="M32 82 Q14 58 -2 46 Q16 62 32 78" fill="#091408"/><path d="M33 78 Q50 55 64 43 Q51 59 33 74" fill="#091408"/><path d="M31 92 Q8 78 0 60 Q16 76 31 86" fill="#0b1a0a"/><path d="M34 89 Q58 76 64 58 Q50 73 34 83" fill="#0b1a0a"/><path d="M30 105 Q2 94 -4 76 Q12 92 30 99" fill="#091408"/><path d="M35 102 Q62 92 66 74 Q54 89 35 96" fill="#091408"/><path d="M29 120 Q-4 112 -8 94 Q8 110 29 114" fill="#0b1a0a"/><path d="M36 117 Q68 110 70 92 Q58 107 36 111" fill="#0b1a0a"/></svg></div>
-  <div class="palm pbg2"><svg viewBox="0 0 60 180" fill="none"><path d="M30 180 L31 70" stroke="#0e1e0c" stroke-width="4" stroke-linecap="round"/><path d="M31 76 Q14 54 0 42 Q15 58 31 72" fill="#091408"/><path d="M32 72 Q48 51 60 40 Q49 55 32 68" fill="#091408"/><path d="M30 88 Q6 74 -1 57 Q14 72 30 82" fill="#0b1a0a"/><path d="M33 85 Q56 72 61 55 Q48 69 33 79" fill="#0b1a0a"/><path d="M29 102 Q0 91 -5 74 Q10 89 29 96" fill="#091408"/><path d="M34 99 Q62 89 65 72 Q53 86 34 93" fill="#091408"/><path d="M28 116 Q-6 107 -9 90 Q7 105 28 110" fill="#0b1a0a"/><path d="M35 113 Q68 105 69 88 Q57 102 35 107" fill="#0b1a0a"/></svg></div>
-  <div class="palm pbg3"><svg viewBox="0 0 55 165" fill="none"><path d="M28 165 L28 65" stroke="#0e1e0c" stroke-width="4" stroke-linecap="round"/><path d="M27 71 Q12 50 0 39 Q13 54 27 67" fill="#091408"/><path d="M29 68 Q43 48 54 37 Q44 51 29 64" fill="#091408"/><path d="M26 82 Q5 69 -1 53 Q12 67 26 76" fill="#0b1a0a"/><path d="M30 79 Q50 67 54 51 Q43 65 30 73" fill="#0b1a0a"/><path d="M25 96 Q-1 86 -5 70 Q9 84 25 90" fill="#091408"/><path d="M31 93 Q56 84 58 68 Q48 82 31 87" fill="#091408"/></svg></div>
-  <div class="palm pbg4"><svg viewBox="0 0 50 155" fill="none"><path d="M25 155 L26 61" stroke="#0e1e0c" stroke-width="4" stroke-linecap="round"/><path d="M25 67 Q10 47 -1 37 Q11 51 25 63" fill="#091408"/><path d="M27 64 Q40 45 50 35 Q41 48 27 60" fill="#091408"/><path d="M24 78 Q4 66 -1 50 Q11 64 24 72" fill="#0b1a0a"/><path d="M28 75 Q48 64 51 49 Q41 62 28 69" fill="#0b1a0a"/><path d="M23 92 Q-2 82 -5 66 Q8 80 23 86" fill="#091408"/><path d="M29 89 Q54 80 55 64 Q45 77 29 83" fill="#091408"/></svg></div>
+  <div class="palm pbg1"><svg viewBox="0 0 65 195" fill="none"><path d="M33 195 Q32 145 30 100 Q29 62 30 30 Q31 15 33 6" stroke="#0e1e0c" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M32 9 Q6 34 -6 78 Q8 30 32 20" fill="#091408"/><path d="M32 9 Q16 -8 4 26 Q18 -1 32 18" fill="#060e07"/><path d="M33 7 Q30 -18 27 -30 Q37 -14 36 9" fill="#091408"/><path d="M34 9 Q52 -8 58 26 Q50 -1 34 18" fill="#060e07"/><path d="M35 9 Q58 34 66 78 Q56 30 35 20" fill="#091408"/></svg></div>
+  <div class="palm pbg2"><svg viewBox="0 0 60 180" fill="none"><path d="M30 180 Q31 134 32 90 Q33 56 32 26 Q31 12 30 4" stroke="#0e1e0c" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M29 7 Q5 30 -4 72 Q7 26 29 17" fill="#091408"/><path d="M29 7 Q13 -9 3 23 Q15 -2 29 16" fill="#060e07"/><path d="M30 5 Q28 -18 25 -28 Q34 -12 33 7" fill="#091408"/><path d="M31 7 Q47 -9 53 23 Q45 -2 31 16" fill="#060e07"/><path d="M32 7 Q54 30 62 72 Q52 26 32 17" fill="#091408"/></svg></div>
+  <div class="palm pbg3"><svg viewBox="0 0 55 165" fill="none"><path d="M28 165 Q27 124 26 84 Q25 52 26 24 Q27 11 28 4" stroke="#0e1e0c" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M27 7 Q4 28 -3 66 Q5 24 27 16" fill="#091408"/><path d="M27 7 Q11 -8 2 21 Q13 -1 27 15" fill="#060e07"/><path d="M28 5 Q26 -16 23 -26 Q31 -11 30 7" fill="#091408"/><path d="M29 7 Q45 -8 50 21 Q43 -1 29 15" fill="#060e07"/><path d="M30 7 Q50 28 56 66 Q48 24 30 16" fill="#091408"/></svg></div>
+  <div class="palm pbg4"><svg viewBox="0 0 50 155" fill="none"><path d="M25 155 Q24 116 23 78 Q23 48 24 22 Q24 10 25 3" stroke="#0e1e0c" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M24 6 Q4 26 -3 60 Q5 22 24 14" fill="#091408"/><path d="M24 6 Q9 -7 1 19 Q11 -1 24 13" fill="#060e07"/><path d="M25 4 Q23 -14 21 -24 Q28 -10 27 6" fill="#091408"/><path d="M26 6 Q40 -7 44 19 Q38 -1 26 13" fill="#060e07"/><path d="M27 6 Q44 26 50 60 Q42 22 27 14" fill="#091408"/></svg></div>
 
   <!-- LEFT TALL — 16 fronds, dramatic -->
   <div class="palm pl1">
     <svg viewBox="0 0 250 750" fill="none">
-      <path d="M108 750 Q110 640 114 524 Q118 410 114 302 Q110 208 106 126 Q103 70 100 28 Q98 12 96 0" stroke="#0e2010" stroke-width="17" stroke-linecap="round" fill="none"/>
-      <path d="M105 678 Q114 675 115 685" stroke="#162614" stroke-width="3.5" fill="none"/>
-      <path d="M106 606 Q115 603 116 613" stroke="#162614" stroke-width="3" fill="none"/>
-      <path d="M107 530 Q116 527 117 537" stroke="#162614" stroke-width="3" fill="none"/>
-      <path d="M108 450 Q117 447 118 457" stroke="#162614" stroke-width="2.5" fill="none"/>
-      <path d="M109 368 Q118 365 119 375" stroke="#162614" stroke-width="2" fill="none"/>
-      <path d="M96 5 Q42 -52 -26 -72 Q36 -16 96 13" fill="#060e07"/>
-      <path d="M98 0 Q166 -56 232 -76 Q170 -20 98 8" fill="#060e07"/>
-      <path d="M94 15 Q26 -8 -26 8 Q24 -4 94 21" fill="#091408"/>
-      <path d="M100 12 Q170 -12 220 4 Q172 -8 100 18" fill="#091408"/>
-      <path d="M93 27 Q16 8 -36 32 Q14 11 93 33" fill="#060e07"/>
-      <path d="M101 24 Q180 6 232 30 Q182 9 101 30" fill="#060e07"/>
-      <path d="M92 41 Q6 26 -44 58 Q4 29 92 47" fill="#091408"/>
-      <path d="M102 38 Q188 24 236 56 Q190 27 102 44" fill="#091408"/>
-      <path d="M91 57 Q-4 46 -50 86 Q-2 50 91 63" fill="#060e07"/>
-      <path d="M103 54 Q198 44 240 84 Q200 48 103 60" fill="#060e07"/>
-      <path d="M90 75 Q-14 68 -58 116 Q-12 72 90 81" fill="#091408"/>
-      <path d="M104 72 Q208 66 246 114 Q210 70 104 78" fill="#091408"/>
-      <path d="M89 95 Q-24 92 -66 148 Q-20 98 89 101" fill="#060e07"/>
-      <path d="M105 92 Q218 90 254 146 Q220 94 105 98" fill="#060e07"/>
-      <path d="M88 117 Q-34 117 -74 181 Q-30 121 88 123" fill="#091408"/>
-      <path d="M106 114 Q228 115 262 179 Q230 118 106 120" fill="#091408"/>
+      <!-- curved trunk, leans left, with ring texture -->
+      <path d="M112 750 Q108 630 104 510 Q100 390 102 278 Q104 180 100 100 Q98 55 95 18 Q94 8 93 0" stroke="#162c14" stroke-width="19" stroke-linecap="round" fill="none"/>
+      <path d="M112 750 Q108 630 104 510 Q100 390 102 278 Q104 180 100 100 Q98 55 95 18 Q94 8 93 0" stroke="#0e2010" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <path d="M105 670 Q115 667 116 677" stroke="#1e3a18" stroke-width="3" fill="none"/>
+      <path d="M104 590 Q114 587 115 597" stroke="#1e3a18" stroke-width="3" fill="none"/>
+      <path d="M103 506 Q113 503 114 512" stroke="#1e3a18" stroke-width="2.5" fill="none"/>
+      <path d="M102 420 Q112 417 113 426" stroke="#1e3a18" stroke-width="2.5" fill="none"/>
+      <path d="M101 334 Q111 331 112 340" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <path d="M100 250 Q110 247 111 256" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <!-- coconut cluster -->
+      <circle cx="94" cy="22" r="7" fill="#0a1a08"/>
+      <circle cx="103" cy="18" r="6" fill="#091608"/>
+      <circle cx="88" cy="16" r="5" fill="#0c1e0a"/>
+      <!-- fronds — draping naturally from crown -->
+      <path d="M92 12 Q14 70 -48 185 Q18 64 92 26" fill="#060e07"/>
+      <path d="M92 12 Q38 56 4 128 Q36 50 92 26" fill="#0a1a08"/>
+      <path d="M91 10 Q18 -8 -14 72 Q20 0 91 22" fill="#060e07"/>
+      <path d="M91 8 Q38 -44 14 -12 Q42 -28 91 18" fill="#0a1a08"/>
+      <path d="M93 6 Q88 -58 84 -90 Q98 -50 98 8" fill="#060e07"/>
+      <path d="M96 8 Q152 -44 178 -12 Q148 -28 96 18" fill="#0a1a08"/>
+      <path d="M98 10 Q178 -8 212 72 Q175 0 98 22" fill="#060e07"/>
+      <path d="M100 12 Q160 56 196 128 Q156 50 100 26" fill="#0a1a08"/>
+      <path d="M102 12 Q182 70 244 185 Q178 64 102 26" fill="#060e07"/>
     </svg>
   </div>
 
   <!-- LEFT MID — 16 fronds -->
   <div class="palm pl2">
     <svg viewBox="0 0 172 560" fill="none">
-      <path d="M88 560 Q86 473 83 381 Q80 291 84 205 Q88 132 92 72 Q94 40 96 13" stroke="#0e2010" stroke-width="13" stroke-linecap="round" fill="none"/>
-      <path d="M87 502 Q95 499 96 508" stroke="#162614" stroke-width="2.5" fill="none"/>
-      <path d="M86 432 Q94 429 95 438" stroke="#162614" stroke-width="2.5" fill="none"/>
-      <path d="M85 358 Q93 355 94 364" stroke="#162614" stroke-width="2" fill="none"/>
-      <path d="M96 19 Q56 -29 14 -43 Q54 -11 96 25" fill="#060e07"/>
-      <path d="M98 14 Q140 -33 174 -47 Q142 -15 98 20" fill="#060e07"/>
-      <path d="M95 29 Q48 11 10 23 Q48 13 95 35" fill="#091408"/>
-      <path d="M99 26 Q150 9 176 21 Q152 11 99 32" fill="#091408"/>
-      <path d="M94 41 Q38 25 2 43 Q38 28 94 47" fill="#060e07"/>
-      <path d="M100 38 Q160 23 182 41 Q162 26 100 44" fill="#060e07"/>
-      <path d="M93 55 Q28 42 -6 67 Q28 45 93 61" fill="#091408"/>
-      <path d="M101 52 Q170 40 196 65 Q172 43 101 58" fill="#091408"/>
-      <path d="M92 71 Q18 61 -14 95 Q18 65 92 77" fill="#060e07"/>
-      <path d="M102 68 Q178 59 202 93 Q180 62 102 74" fill="#060e07"/>
-      <path d="M91 89 Q8 83 -24 125 Q10 87 91 95" fill="#091408"/>
-      <path d="M103 86 Q188 81 210 123 Q190 85 103 92" fill="#091408"/>
-      <path d="M90 109 Q-2 107 -32 157 Q2 111 90 115" fill="#060e07"/>
-      <path d="M104 106 Q198 105 224 155 Q200 109 104 112" fill="#060e07"/>
-      <path d="M89 131 Q-10 132 -38 189 Q-6 135 89 137" fill="#091408"/>
-      <path d="M105 128 Q206 130 230 187 Q208 132 105 134" fill="#091408"/>
+      <path d="M90 560 Q88 464 85 368 Q82 276 86 192 Q90 124 94 68 Q96 38 97 14" stroke="#162c14" stroke-width="15" stroke-linecap="round" fill="none"/>
+      <path d="M90 560 Q88 464 85 368 Q82 276 86 192 Q90 124 94 68 Q96 38 97 14" stroke="#0e2010" stroke-width="10" stroke-linecap="round" fill="none"/>
+      <path d="M88 496 Q97 493 98 502" stroke="#1e3a18" stroke-width="2.5" fill="none"/>
+      <path d="M87 420 Q96 417 97 426" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <path d="M86 342 Q95 339 96 348" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <circle cx="97" cy="22" r="6" fill="#0a1a08"/>
+      <circle cx="105" cy="18" r="5" fill="#091608"/>
+      <circle cx="90" cy="16" r="4" fill="#0c1e0a"/>
+      <path d="M95 16 Q28 58 -16 144 Q30 52 95 28" fill="#060e07"/>
+      <path d="M95 16 Q46 48 16 106 Q44 42 95 28" fill="#0a1a08"/>
+      <path d="M94 13 Q24 -4 -4 64 Q26 4 94 24" fill="#060e07"/>
+      <path d="M94 11 Q44 -38 22 -8 Q46 -22 94 20" fill="#0a1a08"/>
+      <path d="M96 8 Q92 -52 88 -78 Q102 -44 101 10" fill="#060e07"/>
+      <path d="M99 11 Q150 -38 150 -8 Q148 -22 99 20" fill="#0a1a08"/>
+      <path d="M101 13 Q168 -4 176 64 Q166 4 101 24" fill="#060e07"/>
+      <path d="M102 16 Q154 48 158 106 Q152 42 102 28" fill="#0a1a08"/>
+      <path d="M103 16 Q168 58 188 144 Q166 52 103 28" fill="#060e07"/>
     </svg>
   </div>
 
   <!-- LEFT SHORT — 16 fronds -->
   <div class="palm pl3">
     <svg viewBox="0 0 130 420" fill="none">
-      <path d="M66 420 Q64 356 61 286 Q58 218 62 155 Q66 102 70 56 Q72 32 74 10" stroke="#0e2010" stroke-width="10" stroke-linecap="round" fill="none"/>
-      <path d="M73 16 Q46 -7 18 -15 Q46 1 73 20" fill="#060e07"/>
-      <path d="M75 12 Q104 -11 126 -19 Q106 -3 75 16" fill="#060e07"/>
-      <path d="M72 26 Q38 13 12 23 Q38 15 72 30" fill="#091408"/>
-      <path d="M76 23 Q112 11 130 21 Q114 13 76 27" fill="#091408"/>
-      <path d="M71 38 Q28 25 4 42 Q28 28 71 42" fill="#060e07"/>
-      <path d="M77 35 Q122 23 136 40 Q124 25 77 39" fill="#060e07"/>
-      <path d="M70 52 Q20 41 -2 65 Q20 44 70 56" fill="#091408"/>
-      <path d="M78 49 Q130 39 144 63 Q132 42 78 53" fill="#091408"/>
-      <path d="M69 68 Q10 60 -10 90 Q12 64 69 72" fill="#060e07"/>
-      <path d="M79 65 Q140 58 152 88 Q142 61 79 69" fill="#060e07"/>
-      <path d="M68 86 Q0 81 -16 118 Q2 85 68 90" fill="#091408"/>
-      <path d="M80 83 Q150 79 160 116 Q152 83 80 87" fill="#091408"/>
-      <path d="M67 106 Q-8 104 -22 148 Q-4 108 67 110" fill="#060e07"/>
-      <path d="M81 103 Q158 102 166 146 Q159 106 81 107" fill="#060e07"/>
-      <path d="M66 128 Q-16 128 -28 178 Q-12 132 66 132" fill="#091408"/>
-      <path d="M82 125 Q166 126 174 176 Q168 129 82 129" fill="#091408"/>
+      <path d="M67 420 Q65 354 62 282 Q59 212 63 148 Q67 96 71 52 Q73 28 74 10" stroke="#162c14" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <path d="M67 420 Q65 354 62 282 Q59 212 63 148 Q67 96 71 52 Q73 28 74 10" stroke="#0e2010" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <path d="M65 358 Q73 355 74 363" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <path d="M64 284 Q72 281 73 289" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <circle cx="74" cy="16" r="5" fill="#0a1a08"/>
+      <circle cx="81" cy="13" r="4" fill="#091608"/>
+      <circle cx="68" cy="12" r="3" fill="#0c1e0a"/>
+      <path d="M72 13 Q22 46 -6 108 Q24 40 72 24" fill="#060e07"/>
+      <path d="M72 13 Q36 38 14 86 Q34 33 72 24" fill="#0a1a08"/>
+      <path d="M71 11 Q18 -2 0 52 Q20 4 71 20" fill="#060e07"/>
+      <path d="M71 9 Q36 -30 18 -4 Q38 -16 71 17" fill="#0a1a08"/>
+      <path d="M74 7 Q70 -44 67 -64 Q79 -36 77 9" fill="#060e07"/>
+      <path d="M77 9 Q112 -30 114 -4 Q110 -16 77 17" fill="#0a1a08"/>
+      <path d="M79 11 Q132 -2 132 52 Q128 4 79 20" fill="#060e07"/>
+      <path d="M80 13 Q116 38 118 86 Q114 33 80 24" fill="#0a1a08"/>
     </svg>
   </div>
 
   <!-- RIGHT TALL — 16 fronds -->
   <div class="palm pr1">
     <svg viewBox="0 0 225 700" fill="none">
-      <path d="M115 700 Q113 596 110 486 Q107 378 111 274 Q115 184 120 108 Q123 62 125 22 Q126 10 127 2" stroke="#0e2010" stroke-width="15" stroke-linecap="round" fill="none"/>
-      <path d="M114 630 Q123 627 124 637" stroke="#162614" stroke-width="3" fill="none"/>
-      <path d="M113 558 Q122 555 123 565" stroke="#162614" stroke-width="3" fill="none"/>
-      <path d="M112 480 Q121 477 122 487" stroke="#162614" stroke-width="2.5" fill="none"/>
-      <path d="M111 398 Q120 395 121 405" stroke="#162614" stroke-width="2" fill="none"/>
-      <path d="M126 8 Q87 -44 39 -60 Q85 -18 126 16" fill="#060e07"/>
-      <path d="M128 3 Q177 -48 223 -64 Q179 -22 128 10" fill="#060e07"/>
-      <path d="M125 18 Q71 0 25 14 Q71 2 125 24" fill="#091408"/>
-      <path d="M129 15 Q185 -2 223 12 Q187 0 129 21" fill="#091408"/>
-      <path d="M124 30 Q59 13 15 34 Q59 16 124 36" fill="#060e07"/>
-      <path d="M130 27 Q197 11 231 32 Q199 14 130 33" fill="#060e07"/>
-      <path d="M123 44 Q47 30 5 60 Q47 34 123 50" fill="#091408"/>
-      <path d="M131 41 Q209 28 241 58 Q211 31 131 47" fill="#091408"/>
-      <path d="M122 60 Q35 49 -5 88 Q37 54 122 66" fill="#060e07"/>
-      <path d="M132 57 Q221 47 255 86 Q223 51 132 63" fill="#060e07"/>
-      <path d="M121 78 Q23 70 -15 118 Q25 74 121 84" fill="#091408"/>
-      <path d="M133 75 Q233 68 265 116 Q235 72 133 81" fill="#091408"/>
-      <path d="M120 98 Q11 94 -25 150 Q15 100 120 104" fill="#060e07"/>
-      <path d="M134 95 Q245 92 275 148 Q247 98 134 101" fill="#060e07"/>
-      <path d="M119 120 Q-1 120 -37 184 Q3 124 119 126" fill="#091408"/>
-      <path d="M135 117 Q255 118 285 182 Q257 121 135 123" fill="#091408"/>
+      <!-- trunk leans right -->
+      <path d="M112 700 Q116 594 120 482 Q124 372 120 268 Q116 172 112 96 Q110 52 112 18 Q113 8 115 2" stroke="#162c14" stroke-width="18" stroke-linecap="round" fill="none"/>
+      <path d="M112 700 Q116 594 120 482 Q124 372 120 268 Q116 172 112 96 Q110 52 112 18 Q113 8 115 2" stroke="#0e2010" stroke-width="13" stroke-linecap="round" fill="none"/>
+      <path d="M113 628 Q122 625 123 634" stroke="#1e3a18" stroke-width="3" fill="none"/>
+      <path d="M114 552 Q123 549 124 558" stroke="#1e3a18" stroke-width="3" fill="none"/>
+      <path d="M115 474 Q124 471 125 480" stroke="#1e3a18" stroke-width="2.5" fill="none"/>
+      <path d="M116 396 Q125 393 126 402" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <circle cx="114" cy="20" r="7" fill="#0a1a08"/>
+      <circle cx="122" cy="16" r="6" fill="#091608"/>
+      <circle cx="107" cy="14" r="5" fill="#0c1e0a"/>
+      <path d="M116 13 Q196 68 248 182 Q192 62 116 27" fill="#060e07"/>
+      <path d="M116 13 Q162 54 186 126 Q158 48 116 27" fill="#0a1a08"/>
+      <path d="M117 10 Q194 -6 216 70 Q190 2 117 22" fill="#060e07"/>
+      <path d="M117 8 Q172 -42 192 -10 Q168 -26 117 18" fill="#0a1a08"/>
+      <path d="M116 6 Q113 -56 110 -88 Q124 -48 122 8" fill="#060e07"/>
+      <path d="M114 8 Q58 -42 36 -10 Q62 -26 114 18" fill="#0a1a08"/>
+      <path d="M113 10 Q36 -6 10 70 Q38 2 113 22" fill="#060e07"/>
+      <path d="M113 13 Q64 54 38 126 Q66 48 113 27" fill="#0a1a08"/>
+      <path d="M112 13 Q32 68 -22 182 Q34 62 112 27" fill="#060e07"/>
     </svg>
   </div>
 
   <!-- RIGHT MID — 16 fronds -->
   <div class="palm pr2">
     <svg viewBox="0 0 158 520" fill="none">
-      <path d="M81 520 Q83 440 86 354 Q89 270 85 192 Q81 128 77 68 Q74 38 72 12" stroke="#0e2010" stroke-width="12" stroke-linecap="round" fill="none"/>
-      <path d="M80 466 Q88 463 89 472" stroke="#162614" stroke-width="2.5" fill="none"/>
-      <path d="M79 398 Q87 395 88 404" stroke="#162614" stroke-width="2" fill="none"/>
-      <path d="M73 18 Q45 -2 15 -10 Q43 6 73 22" fill="#060e07"/>
-      <path d="M75 14 Q105 -6 131 -14 Q107 2 75 18" fill="#060e07"/>
-      <path d="M72 28 Q35 15 9 25 Q35 16 72 32" fill="#091408"/>
-      <path d="M76 25 Q115 13 135 23 Q117 15 76 29" fill="#091408"/>
-      <path d="M71 40 Q26 28 2 46 Q26 31 71 44" fill="#060e07"/>
-      <path d="M77 37 Q124 26 142 44 Q126 28 77 41" fill="#060e07"/>
-      <path d="M70 54 Q17 45 -5 71 Q17 48 70 58" fill="#091408"/>
-      <path d="M78 51 Q133 43 149 69 Q135 46 78 55" fill="#091408"/>
-      <path d="M69 70 Q7 64 -13 99 Q9 68 69 75" fill="#060e07"/>
-      <path d="M79 67 Q145 62 159 97 Q147 65 79 72" fill="#060e07"/>
-      <path d="M68 88 Q-4 85 -22 128 Q-2 91 68 93" fill="#091408"/>
-      <path d="M80 85 Q154 83 166 126 Q156 88 80 90" fill="#091408"/>
-      <path d="M67 108 Q-13 108 -29 158 Q-9 112 67 113" fill="#060e07"/>
-      <path d="M81 105 Q163 106 173 156 Q164 109 81 110" fill="#060e07"/>
-      <path d="M66 130 Q-20 132 -34 190 Q-16 134 66 135" fill="#091408"/>
-      <path d="M82 127 Q170 130 180 188 Q171 132 82 132" fill="#091408"/>
+      <path d="M80 520 Q82 438 85 350 Q88 264 84 184 Q80 118 77 62 Q75 32 74 12" stroke="#162c14" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <path d="M80 520 Q82 438 85 350 Q88 264 84 184 Q80 118 77 62 Q75 32 74 12" stroke="#0e2010" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <path d="M79 460 Q88 457 89 465" stroke="#1e3a18" stroke-width="2.5" fill="none"/>
+      <path d="M78 386 Q87 383 88 391" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <circle cx="75" cy="18" r="5" fill="#0a1a08"/>
+      <circle cx="83" cy="14" r="5" fill="#091608"/>
+      <circle cx="68" cy="13" r="4" fill="#0c1e0a"/>
+      <path d="M75 15 Q136 64 168 152 Q132 58 75 27" fill="#060e07"/>
+      <path d="M75 15 Q122 50 140 114 Q118 44 75 26" fill="#0a1a08"/>
+      <path d="M76 12 Q144 -4 158 66 Q140 4 76 22" fill="#060e07"/>
+      <path d="M76 10 Q126 -38 138 -8 Q122 -22 76 18" fill="#0a1a08"/>
+      <path d="M74 8 Q71 -46 68 -70 Q82 -38 80 10" fill="#060e07"/>
+      <path d="M72 10 Q20 -38 6 -8 Q24 -22 72 18" fill="#0a1a08"/>
+      <path d="M70 12 Q2 -4 -14 66 Q4 4 70 22" fill="#060e07"/>
+      <path d="M70 15 Q22 50 2 114 Q26 44 70 26" fill="#0a1a08"/>
+      <path d="M70 15 Q4 64 -28 152 Q8 58 70 27" fill="#060e07"/>
     </svg>
   </div>
 
   <!-- RIGHT SHORT — 16 fronds -->
   <div class="palm pr3">
     <svg viewBox="0 0 118 385" fill="none">
-      <path d="M59 385 Q61 325 64 260 Q67 196 63 138 Q59 88 55 46 Q53 24 51 6" stroke="#0e2010" stroke-width="9" stroke-linecap="round" fill="none"/>
-      <path d="M52 11 Q29 -6 5 -13 Q29 3 52 15" fill="#060e07"/>
-      <path d="M54 7 Q77 -10 99 -17 Q79 -1 54 11" fill="#060e07"/>
-      <path d="M51 21 Q21 9 -1 17 Q21 11 51 25" fill="#091408"/>
-      <path d="M55 18 Q87 7 103 15 Q89 9 55 22" fill="#091408"/>
-      <path d="M50 33 Q13 21 -5 36 Q13 24 50 37" fill="#060e07"/>
-      <path d="M56 30 Q95 19 109 34 Q97 21 56 34" fill="#060e07"/>
-      <path d="M49 46 Q5 37 -9 61 Q5 40 49 50" fill="#091408"/>
-      <path d="M57 43 Q103 35 113 59 Q105 37 57 47" fill="#091408"/>
-      <path d="M48 61 Q-1 55 -13 87 Q-1 59 48 65" fill="#060e07"/>
-      <path d="M58 58 Q109 53 117 85 Q111 57 58 62" fill="#060e07"/>
-      <path d="M47 78 Q-9 75 -19 114 Q-7 80 47 82" fill="#091408"/>
-      <path d="M59 75 Q117 73 123 112 Q119 78 59 79" fill="#091408"/>
-      <path d="M46 97 Q-14 97 -22 142 Q-12 100 46 101" fill="#060e07"/>
-      <path d="M60 94 Q122 95 126 140 Q123 98 60 98" fill="#060e07"/>
-      <path d="M45 118 Q-20 120 -26 172 Q-17 122 45 122" fill="#091408"/>
-      <path d="M61 115 Q128 118 130 170 Q128 119 61 119" fill="#091408"/>
+      <path d="M59 385 Q61 322 63 256 Q66 190 62 132 Q58 82 55 44 Q53 22 52 6" stroke="#162c14" stroke-width="11" stroke-linecap="round" fill="none"/>
+      <path d="M59 385 Q61 322 63 256 Q66 190 62 132 Q58 82 55 44 Q53 22 52 6" stroke="#0e2010" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M58 318 Q66 315 67 323" stroke="#1e3a18" stroke-width="2" fill="none"/>
+      <circle cx="53" cy="12" r="4" fill="#0a1a08"/>
+      <circle cx="60" cy="9" r="4" fill="#091608"/>
+      <circle cx="46" cy="10" r="3" fill="#0c1e0a"/>
+      <path d="M53 12 Q98 54 116 118 Q94 48 53 23" fill="#060e07"/>
+      <path d="M53 12 Q96 -8 108 56 Q92 2 53 20" fill="#0a1a08"/>
+      <path d="M53 10 Q78 -38 84 -8 Q74 -22 53 18" fill="#060e07"/>
+      <path d="M54 7 Q51 -44 48 -62 Q60 -36 58 9" fill="#0a1a08"/>
+      <path d="M55 10 Q28 -38 16 -8 Q30 -22 55 18" fill="#060e07"/>
+      <path d="M52 12 Q6 -8 -8 56 Q10 2 52 20" fill="#0a1a08"/>
+      <path d="M51 12 Q4 54 -14 118 Q8 48 51 23" fill="#060e07"/>
     </svg>
   </div>
 
@@ -515,6 +521,32 @@ document.addEventListener('mousemove',function(e){
     ticking=false;
   });
 });
+// Twinkling stars
+(function(){
+  var sky=document.querySelector('.sky');
+  [[12,7,1.5,0],[22,4,2,1.4],[38,11,1,2.8],[54,5,2,0.7],[67,9,1.5,1.9],
+   [76,14,2,3.2],[87,6,1,0.5],[93,17,1.5,2.1],[8,15,1,1.7],[46,18,2,0.3],
+   [60,20,1,3.5],[82,12,1.5,2.6],[18,22,2,1.1],[72,3,1,4.0],[30,8,1.5,2.3],
+   [48,13,1,1.6],[58,24,2,0.9],[90,10,1.5,3.7],[4,10,1,2.0],[34,16,2,1.3]
+  ].forEach(function(s){
+    var el=document.createElement('div');el.className='star';
+    el.style.cssText='left:'+s[0]+'%;top:'+s[1]+'%;width:'+s[2]+'px;height:'+s[2]+'px;animation:starTwinkle '+(2+Math.random()*3).toFixed(1)+'s ease-in-out infinite '+s[3]+'s';
+    sky.appendChild(el);
+  });
+}());
+// Fireflies
+(function(){
+  var sc=document.getElementById('scene');
+  [[8,38],[14,52],[20,44],[28,35],[6,58],[32,62],[18,68],[38,48],
+   [44,36],[10,64],[24,54],[36,72],[12,42],[26,58],[16,46],[42,66]
+  ].forEach(function(f){
+    var el=document.createElement('div');el.className='firefly';
+    var dx=Math.round(Math.random()*40-20),dy=-Math.round(28+Math.random()*45),
+        dx2=Math.round(Math.random()*60-30),dy2=-Math.round(55+Math.random()*70);
+    el.style.cssText='left:'+f[0]+'%;bottom:'+f[1]+'%;--fx:'+dx+'px;--fy:'+dy+'px;--fx2:'+dx2+'px;--fy2:'+dy2+'px;animation:fireflyFloat '+(5+Math.random()*5).toFixed(1)+'s ease-in-out infinite '+(Math.random()*9).toFixed(1)+'s';
+    sc.appendChild(el);
+  });
+}());
 </script>
 </body>
 </html>
