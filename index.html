@@ -64,9 +64,9 @@
 :root{
   --gold:#B8882E;--gold-light:#D4A84B;--gold-pale:#E8C878;
   --gold-dim:#7A5A18;--gold-dark:#4A3408;
-  --green-deep:#071510;--amber:#C85A18;--cream:#F0E4C8;
+  --green-deep:#2c1f0e;--amber:#C85A18;--cream:#F0E4C8;
 }
-html,body{height:100%;background:var(--green-deep);color:var(--cream);font-family:'EB Garamond',serif;overflow-x:hidden;}
+html,body{height:100%;background:#2c1f0e;color:var(--cream);font-family:'EB Garamond',serif;overflow-x:hidden;}
 
 .scene{position:fixed;inset:0;z-index:0;overflow:hidden;transform-origin:center;will-change:transform;}
 
@@ -74,27 +74,27 @@ html,body{height:100%;background:var(--green-deep);color:var(--cream);font-famil
 .sky{
   position:absolute;inset:0;
   background:linear-gradient(180deg,
-    #040e0a 0%,
-    #081812 8%,
-    #0e2416 18%,
-    #162e1c 28%,
-    #1e3a20 36%,
-    #2a4a22 43%,
-    #3e5620 48%,
-    #5e6018 52%,
-    #846414 56%,
-    #a87a10 59%,
-    #c48e0c 62%,
-    #d89808 65%,
-    #e49c06 67%,
-    #e88808 70%,
-    #d87008 73%,
-    #c05808 77%,
-    #9a4008 81%,
-    #6e2c08 86%,
-    #3e1808 91%,
-    #1e1008 96%,
-    #0e2018 100%
+    #1a3a5e 0%,
+    #1e4868 8%,
+    #245a6a 18%,
+    #2e6858 28%,
+    #3a7040 36%,
+    #4e7a28 43%,
+    #6a7e1e 48%,
+    #8a8218 52%,
+    #a88016 56%,
+    #c48e0c 59%,
+    #d89a0a 62%,
+    #e4a408 65%,
+    #ecaa06 67%,
+    #e89010 70%,
+    #d87820 73%,
+    #c06018 77%,
+    #9a4810 81%,
+    #7a3410 86%,
+    #4e2010 91%,
+    #2e1a0e 96%,
+    #1a2e22 100%
   );
 }
 
@@ -188,7 +188,7 @@ html,body{height:100%;background:var(--green-deep);color:var(--cream);font-famil
 .lfoot{width:20px;height:4px;background:var(--gold-dark);border-radius:1px;margin-top:2px;}
 
 .grain{position:fixed;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.05;pointer-events:none;}
-.vignette{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 64% 64% at 50% 46%,transparent 32%,rgba(2,6,3,0.72) 100%),linear-gradient(90deg,rgba(2,6,3,0.42) 0%,transparent 20%,transparent 80%,rgba(2,6,3,0.42) 100%);}
+.vignette{position:fixed;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 64% 64% at 50% 46%,transparent 32%,rgba(2,6,3,0.38) 100%),linear-gradient(90deg,rgba(2,6,3,0.22) 0%,transparent 20%,transparent 80%,rgba(2,6,3,0.22) 100%);}
 .frame{position:fixed;inset:14px;z-index:3;border:1px solid rgba(184,136,46,0.28);pointer-events:none;}
 .frame::before{content:'';position:absolute;inset:5px;border:1px solid rgba(184,136,46,0.11);}
 .cor{position:absolute;width:34px;height:34px;border-color:var(--gold);border-style:solid;opacity:0.62;}
@@ -504,6 +504,8 @@ html,body{height:100%;background:var(--green-deep);color:var(--cream);font-famil
     <p class="tag">Coastal Inspired Tandoori Grill</p>
     <p class="tdot">✦</p>
     <p class="tag">Indian Food</p>
+    <p class="tdot">✦</p>
+    <p class="tag">Breakfast &nbsp;·&nbsp; 8am – 3pm</p>
   </div>
   <div class="summer"><p>Summer 2026</p></div>
   
