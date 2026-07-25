@@ -172,7 +172,7 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
 .pr3{right:13%;bottom:0;}.pr3 svg{width:118px;height:385px;}
 
 /* Building silhouette */
-.building{position:absolute;right:5%;bottom:33%;width:290px;opacity:1;transform-origin:bottom center;z-index:3;}
+.building{position:absolute;right:5%;bottom:33%;width:290px;opacity:1;transform-origin:bottom center;}
 
 /* Lanterns */
 .lanterns{position:absolute;bottom:9%;left:4%;display:flex;gap:16px;align-items:flex-end;}
@@ -272,7 +272,43 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
   <div class="palm pbg4"><svg viewBox="0 0 50 155" fill="none"><path d="M25 155 Q24 116 23 78 Q23 48 24 22 Q24 10 25 3" stroke="#281406" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M24 6 Q4 26 -3 60 Q5 22 24 14" fill="#112412"/><path d="M24 6 Q9 -7 1 19 Q11 -1 24 13" fill="#0c2010"/><path d="M25 4 Q23 -14 21 -24 Q28 -10 27 6" fill="#112412"/><path d="M26 6 Q40 -7 44 19 Q38 -1 26 13" fill="#0c2010"/><path d="M27 6 Q44 26 50 60 Q42 22 27 14" fill="#112412"/></svg></div>
 
   <!-- LEFT TALL — 16 fronds, dramatic -->
-  <div class="palm pl1">
+  <!-- Building silhouette -->
+  <div class="building" id="building">
+    <svg viewBox="0 0 290 260" fill="none">
+      <defs>
+        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#e8e8f0" stop-opacity="0.75"/></linearGradient>
+        <radialGradient id="wg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0a020" stop-opacity="0.7"/><stop offset="100%" stop-color="#f0a020" stop-opacity="0"/></radialGradient>
+      </defs>
+      <ellipse cx="145" cy="252" rx="130" ry="16" fill="rgba(184,136,46,0.05)"/>
+      <rect x="24" y="94" width="242" height="166" fill="rgba(255,255,255,0.88)"/>
+      <rect x="24" y="94" width="242" height="166" fill="url(#bg1)"/>
+      <rect x="24" y="94" width="242" height="6" fill="rgba(200,210,230,0.6)"/>
+      <rect x="24" y="148" width="242" height="2" fill="rgba(184,136,46,0.08)"/>
+      <rect x="32" y="36" width="66" height="166" fill="rgba(255,255,255,0.82)"/>
+      <rect x="28" y="30" width="74" height="11" fill="rgba(240,245,255,0.95)" rx="2"/>
+      <path d="M65 30 Q65 7 55 -3 Q65 1 75 -3 Q65 7 65 30Z" fill="rgba(255,255,255,0.9)"/>
+      <ellipse cx="65" cy="30" rx="30" ry="18" fill="rgba(245,248,255,0.85)"/>
+      <rect x="194" y="56" width="52" height="144" fill="rgba(255,255,255,0.82)"/>
+      <rect x="190" y="50" width="60" height="10" fill="rgba(240,245,255,0.95)" rx="2"/>
+      <path d="M220 50 Q220 29 212 20 Q220 24 228 20 Q220 29 220 50Z" fill="rgba(255,255,255,0.9)"/>
+      <ellipse cx="220" cy="50" rx="25" ry="15" fill="rgba(245,248,255,0.85)"/>
+      <rect x="42" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.22)"/>
+      <rect x="74" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.19)"/>
+      <rect x="106" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.21)"/>
+      <rect x="158" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.18)"/>
+      <rect x="190" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.20)"/>
+      <rect x="222" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.15)"/>
+      <rect x="114" y="150" width="68" height="90" rx="34" fill="rgba(210,220,240,0.4)"/>
+      <circle cx="42" cy="186" r="5" fill="rgba(240,150,20,0.55)"/>
+      <ellipse cx="42" cy="186" rx="10" ry="10" fill="url(#wg)" opacity="0.7"/>
+      <circle cx="248" cy="186" r="5" fill="rgba(240,150,20,0.5)"/>
+      <ellipse cx="248" cy="186" rx="10" ry="10" fill="url(#wg)" opacity="0.6"/>
+      <circle cx="90" cy="186" r="4" fill="rgba(240,150,20,0.42)"/>
+      <circle cx="200" cy="186" r="4" fill="rgba(240,150,20,0.38)"/>
+    </svg>
+  </div>
+
+    <div class="palm pl1">
     <svg viewBox="0 0 250 750" fill="none">
       <!-- curved trunk, leans left, with ring texture -->
       <path d="M112 750 Q108 630 104 510 Q100 390 102 278 Q104 180 100 100 Q98 55 95 18 Q94 8 93 0" stroke="#1c0a04" stroke-width="19" stroke-linecap="round" fill="none"/>
@@ -441,41 +477,6 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
     <div class="lantern" style="transform:scale(0.68)translateY(10px)"><div class="lcap"></div><div class="lbody"><div class="lflame d3"></div></div><div class="lfoot"></div></div>
   </div>
 
-  <!-- Building silhouette -->
-  <div class="building" id="building">
-    <svg viewBox="0 0 290 260" fill="none">
-      <defs>
-        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#e8e8f0" stop-opacity="0.75"/></linearGradient>
-        <radialGradient id="wg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0a020" stop-opacity="0.7"/><stop offset="100%" stop-color="#f0a020" stop-opacity="0"/></radialGradient>
-      </defs>
-      <ellipse cx="145" cy="252" rx="130" ry="16" fill="rgba(184,136,46,0.05)"/>
-      <rect x="24" y="94" width="242" height="166" fill="rgba(255,255,255,0.88)"/>
-      <rect x="24" y="94" width="242" height="166" fill="url(#bg1)"/>
-      <rect x="24" y="94" width="242" height="6" fill="rgba(200,210,230,0.6)"/>
-      <rect x="24" y="148" width="242" height="2" fill="rgba(184,136,46,0.08)"/>
-      <rect x="32" y="36" width="66" height="166" fill="rgba(255,255,255,0.82)"/>
-      <rect x="28" y="30" width="74" height="11" fill="rgba(240,245,255,0.95)" rx="2"/>
-      <path d="M65 30 Q65 7 55 -3 Q65 1 75 -3 Q65 7 65 30Z" fill="rgba(255,255,255,0.9)"/>
-      <ellipse cx="65" cy="30" rx="30" ry="18" fill="rgba(245,248,255,0.85)"/>
-      <rect x="194" y="56" width="52" height="144" fill="rgba(255,255,255,0.82)"/>
-      <rect x="190" y="50" width="60" height="10" fill="rgba(240,245,255,0.95)" rx="2"/>
-      <path d="M220 50 Q220 29 212 20 Q220 24 228 20 Q220 29 220 50Z" fill="rgba(255,255,255,0.9)"/>
-      <ellipse cx="220" cy="50" rx="25" ry="15" fill="rgba(245,248,255,0.85)"/>
-      <rect x="42" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.22)"/>
-      <rect x="74" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.19)"/>
-      <rect x="106" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.21)"/>
-      <rect x="158" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.18)"/>
-      <rect x="190" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.20)"/>
-      <rect x="222" y="112" width="20" height="30" rx="10" fill="rgba(184,136,46,0.15)"/>
-      <rect x="114" y="150" width="68" height="90" rx="34" fill="rgba(210,220,240,0.4)"/>
-      <circle cx="42" cy="186" r="5" fill="rgba(240,150,20,0.55)"/>
-      <ellipse cx="42" cy="186" rx="10" ry="10" fill="url(#wg)" opacity="0.7"/>
-      <circle cx="248" cy="186" r="5" fill="rgba(240,150,20,0.5)"/>
-      <ellipse cx="248" cy="186" rx="10" ry="10" fill="url(#wg)" opacity="0.6"/>
-      <circle cx="90" cy="186" r="4" fill="rgba(240,150,20,0.42)"/>
-      <circle cx="200" cy="186" r="4" fill="rgba(240,150,20,0.38)"/>
-    </svg>
-  </div>
 
   <div class="ocean-wrap">
     <div class="ocean-base"></div>
