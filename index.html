@@ -172,7 +172,7 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
 .pr3{right:13%;bottom:0;}.pr3 svg{width:118px;height:385px;}
 
 /* Building silhouette */
-.building{position:absolute;right:5%;bottom:33%;width:290px;opacity:0.88;transform-origin:bottom center;}
+.building{position:absolute;right:5%;bottom:33%;width:290px;opacity:1;transform-origin:bottom center;z-index:3;}
 
 /* Lanterns */
 .lanterns{position:absolute;bottom:9%;left:4%;display:flex;gap:16px;align-items:flex-end;}
@@ -434,6 +434,13 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
     </svg>
   </div>
 
+
+  <div class="lanterns">
+    <div class="lantern"><div class="lcap"></div><div class="lbody"><div class="lflame"></div></div><div class="lfoot"></div></div>
+    <div class="lantern"><div class="lcap"></div><div class="lbody"><div class="lflame d2"></div></div><div class="lfoot"></div></div>
+    <div class="lantern" style="transform:scale(0.68)translateY(10px)"><div class="lcap"></div><div class="lbody"><div class="lflame d3"></div></div><div class="lfoot"></div></div>
+  </div>
+
   <!-- Building silhouette -->
   <div class="building" id="building">
     <svg viewBox="0 0 290 260" fill="none">
@@ -468,12 +475,6 @@ html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond'
       <circle cx="90" cy="186" r="4" fill="rgba(240,150,20,0.42)"/>
       <circle cx="200" cy="186" r="4" fill="rgba(240,150,20,0.38)"/>
     </svg>
-  </div>
-
-  <div class="lanterns">
-    <div class="lantern"><div class="lcap"></div><div class="lbody"><div class="lflame"></div></div><div class="lfoot"></div></div>
-    <div class="lantern"><div class="lcap"></div><div class="lbody"><div class="lflame d2"></div></div><div class="lfoot"></div></div>
-    <div class="lantern" style="transform:scale(0.68)translateY(10px)"><div class="lcap"></div><div class="lbody"><div class="lflame d3"></div></div><div class="lfoot"></div></div>
   </div>
 
   <div class="ocean-wrap">
