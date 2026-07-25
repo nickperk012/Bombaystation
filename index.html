@@ -66,7 +66,7 @@
   --gold-dim:#7A5A18;--gold-dark:#4A3408;
   --green-deep:#2c1f0e;--amber:#C85A18;--cream:#F0E4C8;
 }
-html,body{height:100%;background:#1a1208;color:#ffffff;font-family:'EB Garamond',serif;overflow-x:hidden;}
+html,body{height:100%;background:#081e36;color:#ffffff;font-family:'EB Garamond',serif;overflow-x:hidden;}
 
 .scene{position:fixed;inset:0;z-index:0;overflow:hidden;transform-origin:center;will-change:transform;}
 
@@ -131,18 +131,18 @@ html,body{height:100%;background:#1a1208;color:#ffffff;font-family:'EB Garamond'
 .ocean-base{
   position:absolute;inset:0;
   background:linear-gradient(180deg,
-    rgba(10,28,16,0) 0%,rgba(7,20,12,0.6) 18%,
-    rgba(5,14,8,0.85) 40%,rgba(4,10,6,0.97) 65%,#030806 100%
+    rgba(80,160,200,0) 0%,rgba(60,120,160,0.45) 18%,
+    rgba(40,90,130,0.65) 40%,rgba(20,60,100,0.82) 65%,#0e2a3e 100%
   );
 }
 .ocean-sides{
   position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(6,24,14,0.65) 0%,rgba(6,24,14,0.2) 28%,transparent 42%,transparent 58%,rgba(6,24,14,0.2) 72%,rgba(6,24,14,0.65) 100%);
+  background:linear-gradient(90deg,rgba(10,40,70,0.5) 0%,rgba(10,40,70,0.15) 28%,transparent 42%,transparent 58%,rgba(10,40,70,0.15) 72%,rgba(10,40,70,0.5) 100%);
 }
 .waves{position:absolute;left:0;right:0;top:0;height:50%;}
 .wl{
   position:absolute;left:-5%;width:112%;height:1px;
-  background:linear-gradient(90deg,transparent 0%,rgba(180,120,20,0.12) 18%,rgba(255,180,30,0.3) 42%,rgba(255,200,40,0.4) 50%,rgba(255,180,30,0.3) 58%,rgba(180,120,20,0.12) 82%,transparent 100%);
+  background:linear-gradient(90deg,transparent 0%,rgba(200,230,255,0.1) 18%,rgba(255,255,255,0.35) 42%,rgba(255,255,255,0.55) 50%,rgba(255,255,255,0.35) 58%,rgba(200,230,255,0.1) 82%,transparent 100%);
   animation:wM 9s ease-in-out infinite;
 }
 .wl:nth-child(1){top:6%}.wl:nth-child(2){top:16%;animation-delay:1.8s;opacity:0.7;}
@@ -150,7 +150,7 @@ html,body{height:100%;background:#1a1208;color:#ffffff;font-family:'EB Garamond'
 .wl:nth-child(5){top:58%;animation-delay:7.2s;opacity:0.18;}
 @keyframes wM{0%,100%{transform:translateX(0)scaleY(1);}50%{transform:translateX(-2%)scaleY(2.2);}}
 
-.shore{position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,rgba(3,8,4,0) 0%,rgba(3,8,4,0.92) 45%,#020604 100%);}
+.shore{position:absolute;left:0;right:0;bottom:0;height:20%;background:linear-gradient(180deg,rgba(10,40,70,0) 0%,rgba(8,30,55,0.75) 45%,#081e36 100%);}
 
 /* ── PALMS ── 10 total, tall and lush */
 .palm{position:absolute;bottom:0;}
